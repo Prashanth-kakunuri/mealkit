@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Section</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Rating Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .faq-section {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #343a40;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .accordion-button {
+            background-color: #a78928;
+            color: white;
+            font-weight: bold;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #a78928;
+            color: white;
+        }
+
+        .accordion-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-body {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-semibold text-warning fs-4" href="#">Meal Kits.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="categories.html">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="about-us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold active px-3" href="faq.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="userprofile.html">User Profile</a></li>
+                    
+                    <!-- card Icon with Card Symbol -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-light px-3 position-relative" href="card.html">
+                            <i class="fa-solid fa-cart-shopping fs-4"></i>
+                        </a>
+                    </li>
+
+                    <!-- Logout Icon with Symbol -->
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-light px-3" href="" onclick="logoutUser()">
+                            <i class="fa-solid fa-right-from-bracket"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container faq-section">
+        <h2 class="faq-title">Frequently Asked Questions (FAQ)</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading1">
+                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                         What is a meal kit?
+                     </button>
+               </h2>
+                 <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                   <div class="accordion-body">
+                     A meal kit is a package that contains all the pre-measured ingredients and recipes to prepare a specific meal at home. It's an easy and convenient way to cook meals without the hassle of grocery shopping.
+                   </div>
+                 </div>
+            </div>
+
+      
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading2">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                        How do I place an order for a meal kit?
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        To place an order, simply browse our meal kits, select the ones you’d like to try, and proceed to checkout. You can choose a delivery date, provide your payment details, and complete your purchase.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading3">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                        Are the ingredients in the meal kits organic?
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We strive to offer high-quality ingredients in our meal kits. Some of our ingredients are organic, but not all are certified organic. You can find more details on ingredient sourcing in the product descriptions.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading4">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                        Can I customize my meal kit?
+                    </button>
+                </h2>
+                <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, many of our meal kits allow customization. You can choose different protein options, swap certain vegetables, or adjust servings. Look for the customization options when ordering.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqHeading5">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+                        What is the delivery process for meal kits?
+                    </button>
+                </h2>
+                <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        We deliver meal kits directly to your doorstep on the selected date. You will receive a tracking number once your order is shipped, and it will be delivered within the designated window.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+     <script>
+
+window.onload = function() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                
+                window.location.href = 'loginpage.html';  
+            } else {
+              
+                history.replaceState(null, null, window.location.href);
+            }
+        };
+      
+          function logoutUser() {
+            localStorage.clear();  
+            window.location.href = 'loginpage.html'; 
+        }
+      
+        
+        window.onpopstate = function(event) {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'loginpage.html';  
+            }
+        };
+     </script>
+
+    <!-- Bootstrap JS, Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .save-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+        .save-btn:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Profile</h2>
+        <form id="editProfileForm">
+            <div class="form-group">
+                <label for="editName">Full Name</label>
+                <input type="text" class="form-control" id="editName" name="name" required placeholder="Enter your full name">
+                <div id="nameError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="editEmail">Email address</label>
+                <input type="email" class="form-control" id="editEmail" placeholder="Enter your email" required>
+                <div id="emailError" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="mobile" class="form-label">Mobile Number</label>
+                <input type="tel" id="mobile" class="form-control" pattern="[6-9][0-9]{9}" maxlength="10" required title="Phone number must be 10 digits and start with 6, 7, 8, or 9" placeholder="Enter your mobile number" onkeydown="restrictMobileInput(event)">
+                <small class="text-muted"></small>
+                <div id="mobileError" class="error-message"></div>
+            </div>
+            <div class="form-group">
+                <label for="editAddress">Address</label>
+                <textarea class="form-control" id="editAddress" rows="3" placeholder="Enter your address" required></textarea>
+                <div id="addressError" class="error"></div>
+            </div>
+            <button type="submit" class="btn save-btn">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Modal for Success Message -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Profile Update Successful</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your profile has been updated successfully.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="redirectToProfile()">Go Back to Profile</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to restrict non-numeric input for mobile number
+        function restrictMobileInput(event) {
+            const key = event.key; // Get the key that is pressed
+
+            // Allow only numeric keys (0-9), backspace, delete, tab, and arrows
+            if (!/[0-9]/.test(key) && key !== 'Backspace' && key !== 'Delete' && key !== 'Tab' && key !== 'ArrowLeft' && key !== 'ArrowRight') {
+                event.preventDefault(); // Prevent any non-numeric key from being entered
+            }
+        }
+
+        // Mobile Number validation (matches the pattern you provided)
+        const phonePattern = /^[6-9][0-9]{9}$/;
+
+        // Validate Email function
+        function validateEmail(email) {
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]{2,}\.[a-zA-Z]{2,}$/;
+            return emailRegex.test(email);
+        }
+
+        // Validate Phone function
+        function validatePhone(phone) {
+            return phonePattern.test(phone);
+        }
+
+        // Validation for required fields
+        function validateFields() {
+            let isValid = true;
+
+            // Clear previous error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('mobileError').textContent = '';
+            document.getElementById('addressError').textContent = '';
+
+            const name = document.getElementById('editName').value.trim();
+            const email = document.getElementById('editEmail').value.trim();
+            const phone = document.getElementById('mobile').value.trim(); // Mobile field name should be 'mobile' (not 'editPhone')
+            const address = document.getElementById('editAddress').value.trim();
+
+            // Validate Name
+            if (!name) {
+                document.getElementById('nameError').textContent = 'Full Name is required.';
+                isValid = false;
+            }
+
+            // Validate Email
+            if (!email || !validateEmail(email)) {
+                document.getElementById('emailError').textContent = 'Email should be in person@gamil.com format.';
+                isValid = false;
+            }
+
+            // Validate Phone
+            if (!phone || !validatePhone(phone)) {
+                document.getElementById('mobileError').textContent = 'Phone number must be 10 digits and start with 6, 7, 8, or 9.';
+                isValid = false;
+            }
+
+            // Validate Address
+            if (!address) {
+                document.getElementById('addressError').textContent = 'Address is required.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Function to save the updated profile data to localStorage
+        document.getElementById('editProfileForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+            console.log("Form Submitted!");
+
+            // Perform validation before saving
+            if (validateFields()) {
+                console.log("Validation successful! Saving data...");
+
+                // Get updated values from the form
+                const updatedProfile = {
+                    name: document.getElementById('editName').value,
+                    email: document.getElementById('editEmail').value,
+                    phone: document.getElementById('mobile').value,
+                    address: document.getElementById('editAddress').value
+                };
+
+                // Save the updated profile data to localStorage
+                localStorage.setItem("userProfile", JSON.stringify(updatedProfile));
+
+                // Show success modal after saving
+                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                successModal.show();
+                console.log("Modal displayed!");
+            } else {
+                console.log("Validation failed!");
+            }
+        });
+
+        // Function to redirect to the profile page after clicking "Go Back to Profile"
+        function redirectToProfile() {
+            window.location.href = "userprofile.html"; // Redirect to user profile page
+        }
+    </script>
+</body>
+</html>

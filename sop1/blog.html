@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Section</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Rating Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS for the page -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .blog-section {
+            background-color: #ffffff;
+            padding: 40px 0;
+        }
+
+        .blog-card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-body {
+            padding: 20px;
+        }
+
+        .blog-card-title {
+            font-size: 1.5rem;
+            color: #343a40;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-description {
+            font-size: 1rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+
+        .blog-card-footer {
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        .blog-card-footer a {
+            color: #ffc107;
+            font-weight: bold;
+        }
+
+        .blog-card-footer a:hover {
+            color: #ffc107;
+        }
+
+        /* Custom Styles for Cooking Tips */
+        .cooking-tips-list,
+        .meal-kit-recipes-list,
+        .nutrition-tips-list {
+            padding-left: 20px;
+            font-size: 1rem;
+            color: #343a40;
+        }
+
+        .cooking-tips-list li,
+        .meal-kit-recipes-list li,
+        .nutrition-tips-list li {
+            margin-bottom: 10px;
+        }
+
+        /* Custom Styles for Card Headers */
+        .card-header {
+            background-color: #ffc107;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .meal-kit-recipes-list li,
+        .nutrition-tips-list li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .nutrition-tips-list {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-semibold text-warning fs-4" href="#">Meal Kits.</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="about-us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold active px-3" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="faq.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="userprofile.html">User Profile</a></li>
+                
+                <!-- card Icon with Card Symbol -->
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-light px-3 position-relative" href="card.html">
+                        <i class="fa-solid fa-cart-shopping fs-4"></i>
+                    </a>
+                </li>
+
+                <!-- Logout Icon with Symbol -->
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-light px-3" href="" onclick="logoutUser()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Blog Articles</h2>
+
+        <!-- Blog Section -->
+        <div class="row">
+            <!-- Blog Card 1: Cooking Tips -->
+            <div class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <div class="card-header">Cooking Tips for Beginners</div>
+                    <div class="card-body blog-card-body">
+                        <ul class="cooking-tips-list">
+                            <li>Start Simple with Basic Recipes</li>
+                            <li>Read the Recipe Thoroughly Before Starting</li>
+                            <li>Use Sharp Knives</li>
+                            <li>Prep Your Ingredients Before Cooking (Mise en Place)</li>
+                            <li>Master the Basics of Seasoning</li>
+                            <li>Use Fresh Ingredients</li>
+                            <li>Don’t Overcrowd the Pan</li>
+                            <li>Understand Heat Control</li>
+                            <li>Taste Your Food as You Cook</li>
+                            <li>Practice Patience and Enjoy the Process</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 2: Meal Kit Recipes -->
+            <div class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <div class="card-header">Delicious Meal Kit Recipes You Must Try</div>
+                    <div class="card-body blog-card-body">
+                        <ul class="meal-kit-recipes-list">
+                            <li><strong>Butter Chicken (Murgh Makhani)</strong> - A rich, creamy chicken dish cooked in a buttery tomato gravy, perfect with naan or rice.</li>
+                            <li><strong>Chole Bhature</strong> - Spicy chickpeas served with large, fluffy fried bread. A filling North Indian classic.</li>
+                            <li><strong>Paneer Tikka</strong> - Grilled cubes of marinated paneer, often served as an appetizer with mint chutney.</li>
+                            <li><strong>Biryani (Chicken or Vegetable)</strong> - A flavorful rice dish cooked with spiced.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Card 3: Nutrition Advice -->
+            <div class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <div class="card-header">Nutrition Advice: Eating Healthy on a Budget</div>
+                    <div class="card-body blog-card-body">
+                        <ul class="nutrition-tips-list">
+                            <li><strong>Eat a Variety of Foods</strong> - Include fruits, vegetables, whole grains, lean proteins, and healthy fats for a balanced diet.</li>
+                            <li><strong>Prioritize Whole Foods</strong> - Choose fresh and unprocessed foods to ensure you get all the nutrients without added sugars and unhealthy fats.</li>
+                            <li><strong>Eat More Fruits and Vegetables</strong> - Aim to fill half of your plate with fruits and vegetables to boost nutrient.</li>                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+
+window.onload = function() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                
+                window.location.href = 'loginpage.html';  
+            } else {
+              
+                history.replaceState(null, null, window.location.href);
+            }
+        };
+      
+          function logoutUser() {
+            localStorage.clear();  
+            window.location.href = 'loginpage.html'; 
+        }
+      
+        
+        window.onpopstate = function(event) {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'loginpage.html';  
+            }
+        };
+    </script>
+    <!-- Bootstrap JS, Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

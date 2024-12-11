@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Kits - Categories</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     
+    <!-- Font Awesome for Rating Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   
+     <!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-semibold text-warning fs-4" href="#">Meal Kits.</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold active px-3" href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="about-us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="faq.html">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold text-light px-3" href="userprofile.html">User Profile</a></li>
+                
+                <!-- card Icon with Card Symbol -->
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-light px-3 position-relative" href="card.html">
+                        <i class="fa-solid fa-cart-shopping fs-4"></i>
+                    </a>
+                </li>
+
+                <!-- Logout Icon with Symbol -->
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-light px-3" href="" onclick="logoutUser()">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Meal Categories -->
+    <div class="container">
+        <h2 class="text-center text-secondary">Meal Kit Categories</h2>
+        <div class="row">
+            <!-- Vegan Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Vegan')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/dbe/8dae85b76616be034f23e63415299dbe.jpg" class="card-img-top" alt="Vegan">
+                    <div class="card-body">
+                        <h5 class="card-title">Butter naan</h5>
+                        <p class="card-text text-secondary">Popular Indian flatbread recipe served with butter.</p>
+                        
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;40</strong></p>
+
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Butter naan', 40, `//b.zmtcdn.com/data/dish_photos/dbe/8dae85b76616be034f23e63415299dbe.jpg`)">Add to card</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Another meal example -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Vegan')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/166/cd4ab676eb3a39c895882e068bafd166.jpeg?output-format=webp" class="card-img-top" alt="Vegan">
+                    <div class="card-body">
+                        <h5 class="card-title">Kaju Paneer</h5>
+                        <p class="card-text text-secondary">Popular Indian  recipe served with kaju paneer.</p>
+                        
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;240</strong></p>
+
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Kaju Paneer Masala', 240, `//b.zmtcdn.com/data/dish_photos/166/cd4ab676eb3a39c895882e068bafd166.jpeg?output-format=webp`)">Add to card</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- More cards here -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Vegan')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/2c8/e54775220725c7b27e311333f54072c8.jpg?output-format=webp" class="card-img-top" alt="Vegan">
+                    <div class="card-body">
+                        <h5 class="card-title">Veg Biryani</h5>
+                        <p class="card-text text-secondary">Popular Indian biryani recipe served with paneer</p>
+                        
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;180</strong></p>
+
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Veg Biryani', 180, `//b.zmtcdn.com/data/dish_photos/2c8/e54775220725c7b27e311333f54072c8.jpg?output-format=webp`)">Add to card</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gluten-Free Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Gluten-Free')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/3b8/966ef50b66d4f35d5a7552e9010e43b8.jpg?output-format=webp" class="card-img-top" alt="Gluten-Free">
+                    <div class="card-body">
+                        <h5 class="card-title">Corn Pizza</h5>
+                        <p class="card-text text-secondary">[Veg Preparation] Spicy Buffalo Puree, Sweetcorn, Red Paprika</p>
+
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;89</strong></p> 
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Corn Pizza', 89, `//b.zmtcdn.com/data/dish_photos/3b8/966ef50b66d4f35d5a7552e9010e43b8.jpg?output-format=webp`)">Add to card</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gluten-Free Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Gluten-Free')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/000/a8f2dbea2b4d8e7ee8f073866f796000.jpeg?output-format=webp" class="card-img-top" alt="Gluten-Free">
+                    <div class="card-body">
+                        <h5 class="card-title">Chicken Burger</h5>
+                        <p class="card-text text-secondary">Our best-selling burger with crispy chicken patty, onion and classic mayo</p>
+
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;99</strong></p>
+
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Chicken Burger', 99, `//b.zmtcdn.com/data/dish_photos/000/a8f2dbea2b4d8e7ee8f073866f796000.jpeg?output-format=webp`)">Add to card</button>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gluten-Free Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Gluten-Free')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/21a/010b29da595df93d828ca0dca935821a.jpeg?output-format=webp" class="card-img-top" alt="Gluten-Free">
+                    <div class="card-body">
+                        <h5 class="card-title">Paneer Pizza</h5>
+                        <p class="card-text text-secondary">Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika</p>
+
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;119</strong></p>
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Paneer Pizza', 119, `//b.zmtcdn.com/data/dish_photos/21a/010b29da595df93d828ca0dca935821a.jpeg?output-format=webp`)">Add to card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Meals Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Family Meals')">
+                    <img src="https://b.zmtcdn.com/data/pictures/chains/1/91711/f3704598c336542166b781026fc5ad4b_o2_featured_v2.jpg?output-format=webp" class="card-img-top" alt="Family Meals">
+                    <div class="card-body">
+                        <h5 class="card-title">chicken Biryani Combo</h5>
+                        <p class="card-text text-secondary btn-add-to-card">Two biryanies two staters with one fry chicken</p>
+
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;599</strong></p>
+
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('chicken Biryani Combo', 599, `//b.zmtcdn.com/data/pictures/chains/1/91711/f3704598c336542166b781026fc5ad4b_o2_featured_v2.jpg?output-format=webp`)">Add to card</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Meals Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Family Meals')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/587/0493abaf9ac24d3527925a9af8939587.jpg?output-format=webp" class="card-img-top" alt="Family Meals">
+                    <div class="card-body">
+                        <h5 class="card-title">Mutton comboes</h5>
+                        <p class="card-text text-secondary">We are offering two mutton biryani in offer with for less price</p>
+
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;699</strong></p>
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Mutton biryani comboes', 699, `//b.zmtcdn.com/data/dish_photos/587/0493abaf9ac24d3527925a9af8939587.jpg?output-format=webp`)">Add to card</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Meals Category -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="categoryClick('Family Meals')">
+                    <img src="https://b.zmtcdn.com/data/dish_photos/0cb/c5dec91c6a1468b1d93b5ed8ac7dd0cb.jpg?output-format=webp" class="card-img-top" alt="Family Meals">
+                    <div class="card-body">
+                        <h5 class="card-title">Biryani combo</h5>
+                        <p class="card-text text-secondary">One mutton biryani with butter naan and chicken curry</p>
+
+                        <!-- Rating Section -->
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <!-- Price Section -->
+                        <p class="card-text text-success mt-2"><strong>&#8377;499</strong></p>
+                        <!-- Buttons Section -->
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-add-to-card" onclick="addTocard('Biryani combo', 499, `//b.zmtcdn.com/data/dish_photos/0cb/c5dec91c6a1468b1d93b5ed8ac7dd0cb.jpg?output-format=webp`)">Add to card</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle card click -->
+    <script>
+
+       // Add to card function
+function addTocard(title, price, image) {
+    // Get the card from localStorage or initialize as empty array
+    let card = JSON.parse(localStorage.getItem('card')) || [];
+
+    // Check if the item already exists in the card
+    let existingItem = card.find(item => item.title === title);
+
+    if (existingItem) {
+        // If item exists, increment quantity
+        existingItem.quantity += 1;
+    } else {
+        // Otherwise, add new item with quantity set to 1
+        card.push({
+            title: title,
+            price: price,
+            image: image, // Add image URL to the item
+            quantity: 1
+        });
+    }
+
+    // Update the card in localStorage
+    localStorage.setItem('card', JSON.stringify(card));
+
+    // Optionally, you can show an alert or update the UI to notify the user
+    alert(`${title} added to the card!`);
+}
+
+      // Get the card from localStorage (or an empty array if it doesn't exist yet)
+let card = JSON.parse(localStorage.getItem('card')) || [];
+let cardItemsContainer = document.getElementById('cardItems');
+let cardSummaryContainer = document.getElementById('cardSummary');
+
+// Check if the card has items
+if (card.length === 0) {
+    cardItemsContainer.innerHTML = '<p class="text-center">Your card is empty.</p>';
+    cardSummaryContainer.innerHTML = '';
+} else {
+    // Display items in the card
+    card.forEach(item => {
+        const cardItem = document.createElement('div');
+        cardItem.classList.add('col-md-4', 'mb-4');
+        cardItem.innerHTML = `
+            <div class="card">
+                <img src="${item.image}" class="card-img-top" alt="${item.title}">
+                <div class="card-body">
+                    <h5 class="card-title">${item.title}</h5>
+                    <p class="card-text">₹${item.price}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Quantity Control -->
+                        <div>
+                            <button class="btn btn-sm btn-secondary" onclick="changeQuantity('${item.title}', -1)">-</button>
+                            <span class="mx-2">${item.quantity}</span>
+                            <button class="btn btn-sm btn-secondary" onclick="changeQuantity('${item.title}', 1)">+</button>
+                        </div>
+                        <!-- Remove Item Button -->
+                        <button class="btn btn-danger btn-sm" onclick="removeItem('${item.title}')">Remove</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        cardItemsContainer.appendChild(cardItem);
+    });
+
+    // Calculate and display the total price
+    let totalPrice = card.reduce((total, item) => total + (item.price * item.quantity), 0);
+    cardSummaryContainer.innerHTML = `
+        <h4>Total Price: ₹${totalPrice.toFixed(2)}</h4>
+        <button class="btn btn-primary mt-3" onclick="checkout()">Proceed to Checkout</button>
+    `;
+}
+
+window.onload = function() {
+            if (!localStorage.getItem('isLoggedIn')) {
+                
+                window.location.href = 'loginpage.html';  
+            } else {
+              
+                history.replaceState(null, null, window.location.href);
+            }
+        };
+      
+function logoutUser() {
+            localStorage.clear();  
+            window.location.href = 'loginpage.html'; 
+        }
+      
+        
+        window.onpopstate = function(event) {
+            if (!localStorage.getItem('isLoggedIn')) {
+                window.location.href = 'loginpage.html';  
+            }
+        };
+    </script>
+
+    <!-- Bootstrap JS, Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
